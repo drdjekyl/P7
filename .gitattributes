@@ -1,3 +1,2 @@
 *.gz filter=lfs diff=lfs merge=lfs -text
-*csv.gz filter=lfs diff=lfs merge=lfs -text
-df_merged.csv.gz filter=lfs diff=lfs merge=lfs -text
+*.csv.gz filter=lfs diff=lfs merge=lfs -text
