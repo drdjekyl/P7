@@ -2,12 +2,9 @@
 from flask import Flask, render_template, request, jsonify
 import flask
 
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from werkzeug.serving import run_simple
-
 ######################## CONFIGURE SERVER ############################
-app = Flask(__name__)
-
+appflask = Flask(__name__)
+dash_app = dash.Dash(__name__, server=app, external_stylesheets=external_stylesheets, url_base_pathname='/dashboard/')
 ######################## CONFIGURE ROUTES ############################
 @app.route("/")
 def getHomeLayout():
@@ -26,8 +23,6 @@ def portal_access():
 @app.route("/contact")
 def getContactLayout():
     return render_template("contact.html")
-
-
 
 ################################# RUN SERVER #####################################
 if __name__ == "__main__":
