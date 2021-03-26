@@ -7,4 +7,4 @@ The core of this project was to evaluate probability of payment default for Cred
 For this work, I used a kernel available on kaggle, adapted some features for my needs and choose Light GBM Classifier as model.
 The imbalanced problem was treated with scal pos weight and I threshold my results to have less false negative.
 
-You can see the prediction of my model with SHAP force plot and other cool graphs generated with plotly in the Heroku server I deployed.
+This project is not actually finished, but soon I will deploy the dashboard on Heroku
