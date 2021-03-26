@@ -17,7 +17,7 @@ appdash = dash.Dash(__name__, external_stylesheets=external_stylesheets,
   requests_pathname_prefix='/dashboard/')
 
 ########################### LAYOUT ############################# 
-dash_app.layout = html.Div([
+appdash.layout = html.Div([
     html.Div([
         html.Div(
             dcc.Input(id='input-on-submit',
@@ -183,7 +183,7 @@ dash_app.layout = html.Div([
 
 
 ######################## CALLBACK ###########################
-@dash_app.callback(
+@appdash.callback(
     Output('container1', 'children'),
     Output('best2', 'figure'),
     Output('best1', 'figure'),
@@ -215,7 +215,7 @@ def update_output(n_clicks, gender_type, paymentRate_value,
     df['OWN_CAR_AGE'] = df['OWN_CAR_AGE'].replace(np.nan, 0)
     df['DAYS_BIRTH'] = df['DAYS_BIRTH'].apply(lambda x: int(x / -365))
 
-    with open('../model.pk', 'rb') as f:
+    with open('model.pk', 'rb') as f:
         model = pickle.load(f)
 
     pred_array = model.predict_proba(df,
