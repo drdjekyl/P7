@@ -15,7 +15,8 @@ import plotly.express as px
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 appdash = dash.Dash(__name__, external_stylesheets=external_stylesheets,
   requests_pathname_prefix='/dashboard/')
-
+appdash.scripts.config.serve_locally = True
+appdash.css.config.serve_locally = True
 ########################### LAYOUT ############################# 
 appdash.layout = html.Div([
     html.Div([
@@ -350,3 +351,4 @@ def update_output(n_clicks, gender_type, paymentRate_value,
     fig3 = px.scatter(dff_birth, x=x, y=y, color="Predict")
 
     return ifr, best_fig2, best_fig1, wors_fig1, wors_fig2, fig1, fig2, fig3
+

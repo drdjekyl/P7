@@ -20,5 +20,3 @@ def getContactLayout():
     return render_template("contact.html")
 
 ################################# RUN SERVER #####################################
-if __name__ == "__main__":
-    appflask.run(debug=True)
