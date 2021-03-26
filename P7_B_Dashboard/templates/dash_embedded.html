@@ -10,21 +10,22 @@
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Optional JavaScript -->
+        <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
 
-    <title>Home Credit | A portal designed for risk assessment</title>
+
+    <title>Home Credit | Portal for banking agent</title>
   </head>
   <body>
-  <!-- Image and text -->
+
 
     <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: #FFFFFF">
       <a class="navbar-brand" href="/">
-        <img src="static/images/HC_navbar_logo.png" width="30" height="30" class="d-inline-block align-top" alt="" style="border-radius:2px">
+        <img src="static/images/HC_navbar_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Home Credit
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,45 +36,12 @@
       </form>
     </nav>
 
-    <style>.responsive {
-      width: 100%;
-      height: auto;
-    }
-    </style>
-
-    <div style="background-color:white; max-width:40%; margin: 3% auto auto">
-      <img src="static/images/HC_home_image.jpg" alt="logo" class="responsive" style="border-radius:20px">
+    <div style="margin: 2% auto auto; display:flex">
+      <p style="margin-left: 610px; display:flex"> Welcome on board {{ value }}</p>
     </div>
 
-    <div class="container">
-      <form class="form-inline" action="{{ url_for("portal_access")}}" method="post">
-        <div class="form-group" style="margin: 3% auto auto; display:flex">
-          <label class="sr-only" for="nameInput">Name</label>
-          <input type="text" class="form-control" name=name id="nameInput" placeholder="First Name">&emsp;
-          <button type="submit" class="btn btn-default">Login</button>
-          <style>
-            .btn btn-default {
-                padding: 9px 14px;
-                font-size: 12px;
-                text-align: center;
-                cursor: pointer;
-                outline: none;
-                color: #fff;
-                background-color: #808080;
-                border: none;
-                border-radius: 3px;
-              }
-            .btn btn-default:hover {background-color: #404040}
+    <iframe src="http://127.0.0.1:5000/dashboard/" seamless frameBorder="0" style="width:100%; height:1300px"></iframe>
 
-            .btn btn-default:active {
-              background-color: #404040;
-            }
-          </style>
-        </div>
-      </form>
-
-      <br>
-    </div>
   <!-- Footer -->
   <div style="background-color:white; width:50%; margin: auto">
     <footer class="w3-center w3-padding-60">
@@ -88,6 +56,7 @@
       </div>
     </footer>
   </div>
-    
+
   </body>
+
 </html>
