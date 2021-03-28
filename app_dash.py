@@ -15,8 +15,7 @@ import plotly.express as px
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 appdash = dash.Dash(__name__, external_stylesheets=external_stylesheets,
   requests_pathname_prefix='/dashboard/')
-appdash.scripts.config.serve_locally = True
-appdash.css.config.serve_locally = True
+
 ########################### LAYOUT ############################# 
 appdash.layout = html.Div([
     html.Div([
@@ -205,12 +204,10 @@ def update_output(n_clicks, gender_type, paymentRate_value,
     ### Prepare the datas
     clientID = value
 
-    columns_name = pd.read_csv('df.csv.gz', nrows=1,
-                               compression='gzip').drop(columns='Unnamed: 0')
-    df = pd.read_csv('df.csv.gz',
+    columns_name = pd.read_csv('df.csv', nrows=1).drop(columns='Unnamed: 0')
+    df = pd.read_csv('df.csv',
                      nrows=1000,
-                     skiprows=clientID,
-                     compression='gzip')
+                     skiprows=clientID)
     df = df.iloc[:, 1:]
     df = pd.DataFrame(data=df.values, columns=columns_name.columns)
     df['OWN_CAR_AGE'] = df['OWN_CAR_AGE'].replace(np.nan, 0)
@@ -352,3 +349,5 @@ def update_output(n_clicks, gender_type, paymentRate_value,
 
     return ifr, best_fig2, best_fig1, wors_fig1, wors_fig2, fig1, fig2, fig3
 
+if __name__ == '__main__':
+    appdash.run_server(debug=True)
