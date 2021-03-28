@@ -7,4 +7,6 @@ The core of this project was to evaluate probability of payment default for Cred
 For this work, I used a kernel available on kaggle, adapted some features for my needs and choose Light GBM Classifier as model.
 The imbalanced problem was treated with scal pos weight and I threshold my results to have less false negative.
 
-This project is not actually finished, but soon I will deploy the dashboard on Heroku
+This project is actually finished, you can find my interactive dashboard on https://home-credit-dash.herokuapp.com/
+
+Please be patient, loading is a bit slow, but works fine :)
