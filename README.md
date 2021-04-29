@@ -1,5 +1,6 @@
 # Prediction of reimboursement loan application for Home Credit customers
 
+Interactive dashboard: https://home-credit-dash.herokuapp.com/
 Dataset: https://www.kaggle.com/c/home-credit-default-risk/data
 
 Context/Scenario: You are a Data Scientist at Home Credit, which offers consumer credit to people with little or no loan history. The company wants to develop a scoring model of the customer's probability of default to support the decision of whether or not to grant a loan to a potential customer. In addition, customer relationship managers have pointed out that customers are increasingly demanding transparency in credit decisions.
